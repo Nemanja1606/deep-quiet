@@ -1,0 +1,12 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"><title>User flow – Deep Quiet Uploader</title>
+<style>body{font:20px/1.4 system-ui,sans-serif;background:#fff;color:#111;margin:30px}h1{font-size:28px}ol li{margin:12px 0}</style></head><body>
+<h1>Deep Quiet Uploader – User flow (single user: channel owner)</h1>
+<ol>
+<li>Owner runs <code>python yt_upload.py --login</code> once and grants access on Google's consent screen (scopes: youtube.force-ssl, yt-analytics.readonly, yt-analytics-monetary.readonly).</li>
+<li>Owner finishes an episode; the release folder contains video, title/description (EN + DE), thumbnail and captions.</li>
+<li>Owner runs <code>python yt_upload.py releases/&lt;episode&gt; --ki no</code>: the video is uploaded as <b>private</b> with metadata, German localization, thumbnail and captions.</li>
+<li>Owner reviews the private video in YouTube Studio.</li>
+<li>After approval, owner runs <code>--plan 2026-11-06T23:00</code>: the script sets publishAt; YouTube publishes at that time.</li>
+<li>The local dashboard reads the channel's own Analytics (views, likes, watch time, revenue) for the owner.</li>
+<li>Access can be revoked any time in the Google Account permissions page; the local token is then deleted.</li>
+</ol></body></html>

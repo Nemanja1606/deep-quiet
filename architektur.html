@@ -1,0 +1,7 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"><title>Architecture – Deep Quiet Uploader</title>
+<style>body{font:20px/1.4 system-ui,sans-serif;background:#fff;color:#111;margin:30px}h1{font-size:28px}.row{display:flex;align-items:center;gap:18px;margin:26px 0}.b{border:2px solid #333;border-radius:10px;padding:14px 18px;min-width:200px;text-align:center;background:#f4f6fb}.a{font-size:30px}small{display:block;color:#555;font-size:15px}</style></head><body>
+<h1>Deep Quiet Uploader – Architecture</h1>
+<div class="row"><div class="b">Release folder on owner's PC<small>video.mp4, texts, thumbnail, .srt</small></div><div class="a">→</div><div class="b">yt_upload.py (local Python script)<small>OAuth desktop client, token stored locally</small></div><div class="a">→</div><div class="b">YouTube Data API v3<small>videos.insert, videos.update, videos.list, thumbnails.set, captions.insert</small></div></div>
+<div class="row"><div class="b" style="visibility:hidden">x</div><div class="a" style="visibility:hidden">→</div><div class="b">Local dashboard (owner only)<small>shows own channel statistics</small></div><div class="a">←</div><div class="b">YouTube Analytics API<small>reports.query, own channel only</small></div></div>
+<p>No server, no database, no other users. All data stays on the owner's computer.</p>
+</body></html>
